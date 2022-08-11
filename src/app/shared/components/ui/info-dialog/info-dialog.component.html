@@ -1,0 +1,29 @@
+<div class="dialog-container">
+
+  <div class="info-dialog-area">
+    <div class="info">
+      <h1>{{data?.title}}</h1>
+      <p *ngFor="let message of data?.messages">{{message.field}} - {{message.value}}</p>
+    </div>
+
+    <div class="actions-around">
+      <button
+        (click)="onDismiss()"
+        class="btn-round"
+        mat-raised-button
+        color="warn"
+        type="button">
+        Cancel
+      </button>
+
+      <!-- <button
+        (click)="onInfo()"
+        class="btn-round"
+        mat-raised-button
+        color="primary"
+        type="button">
+        Info
+      </button> -->
+    </div>
+  </div>
+</div>

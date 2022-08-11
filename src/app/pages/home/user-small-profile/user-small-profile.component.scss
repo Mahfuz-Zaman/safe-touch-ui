@@ -1,0 +1,69 @@
+.user-access{
+    background-color: #e72e5f;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .user-access-top{
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    img{
+      width: 85px;
+      height: 85px;
+      border-radius: 85px;
+      object-fit: cover;
+    }
+
+  }
+  .user-access-top h3{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins',sans-serif;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 22px;
+  }
+  .user-access-bottom{
+    display: block;
+    width: 100%;
+  }
+  .icon-area{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+  }
+  .user-bottom-details{
+    display: block;
+    text-align: center;
+  }
+  .user-bottom-details span{
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  .user-bottom-details h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    display: block;
+    line-height: 20px;
+    font-style:normal;
+  }

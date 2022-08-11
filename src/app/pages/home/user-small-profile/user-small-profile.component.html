@@ -1,0 +1,38 @@
+<div class="user-access">
+    <div class="access-details">
+           <!---accest-top-->
+       <div class="user-access-top">
+           <div>
+               <img [src]="user?.profileImg ? user?.profileImg : '/assets/images/avatar/user_low.png'" [alt]="user?.fullName">
+           </div>
+           <h3>Hi, {{user?.fullName}}</h3>
+       </div>
+       <!--icon-area-->
+       <div class="user-access-bottom">
+           <div class="icon-area">
+               <!---bottom-details-->
+               <div class="user-bottom-details">
+                   <a routerLink="/account/basic-info">
+                       <span><i class="fa fa-user"></i></span>
+                       <h3>Account</h3>
+                   </a>
+               </div>
+                 <!---bottom-details-->
+                 <div class="user-bottom-details">
+                   <a routerLink="/account/order-list">
+                       <span><i class="far fa-list-alt"></i></span>
+                       <h3>Orders</h3>
+                   </a>
+               </div>
+                 <!---bottom-details-->
+                 <div class="user-bottom-details">
+                   <a routerLink="/account/wishlist">
+                       <span><i class="far fa-heart"></i></span>
+                       <h3>Wishlist</h3>
+                   </a>
+               </div>
+       
+           </div>
+       </div>
+    </div>
+   </div>

@@ -1,0 +1,106 @@
+<!----footer-area----->
+
+<footer class="footer-area">
+  <div class="container">
+    <div class="footer-details">
+      <div class="footer-adress">
+        <div class="footer-logo">
+          <img src="/assets/brand/safetouch-logo-black-big.png" alt="safetouch Logo">
+        </div>
+        <div class="footer-pragraph">
+          <p>{{shopInfo?.shortDescription}}</p>
+        </div>
+        <div class="address">
+          <h2>Address:</h2>
+          <h3 *ngFor="let data of shopInfo?.addresses">{{data.value}}</h3>
+        </div>
+        <div class="footer-email-information">
+          <h2 *ngFor="let data of shopInfo?.emails">Email: <a href="mailto: {{data.value}}"> {{data.value}}</a></h2>
+          <h2 *ngFor="let data of shopInfo?.phones">Phone: <a href="tel: {{data.value}}"> {{data.value}}</a></h2>
+        </div>
+      </div>
+
+      <div class="footer-link">
+        <div class="footer-title">
+          <h1>COMPANY</h1>
+        </div>
+        <ul>
+          <li><a routerLink="/pages/about-us">About Us</a></li>
+          <li><a routerLink="/pages/contact-us">Contact Us</a></li>
+          <li><a routerLink="/pages/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-link">
+        <div class="footer-title">
+          <h1>CONDITIONS & POLICIES</h1>
+        </div>
+        <ul>
+          <li><a routerLink="/pages/terms-and-conditions">Terms & Conditions</a></li>
+          <li><a routerLink="/pages/privacy-policy">Privacy  policy</a></li>
+          <li><a routerLink="/pages/return-&-refund-policy">Refund & Return Policy</a></li>
+        </ul>
+      </div>
+
+
+      <div class="footer-download-link">
+        <div class="footer-title">
+          <h1>DOWNLOAD APPS</h1>
+        </div>
+        <div class="play-store-link">
+          <div><a href="javascript:"><img src="/assets/images/png/playstore-download.png" alt="playstore download"></a></div>
+          <div><a href="javascript:"><img src="/assets/images/png/appstore-download.png" alt="appstore download.png"></a></div>
+        </div>
+        <div class="social-link">
+          <div class="footer-title">
+
+            <h1><a target="_blank" routerLink="/">FOLLOW US</a></h1>
+          </div>
+          <ul>
+            <li *ngFor="let data of shopInfo?.socialLinks"><a href="{{data.value}}"><i class="{{socialIcons[data.type]}}"></i></a></li>
+<!--            <li><a href="javascript:"><i class="fab fa-linkedin-in"></i></a></li>-->
+<!--            <li><a href="javascript:"><i class="fab fa-twitter"></i></a></li>-->
+<!--            <li><a href="javascript:"><i class="fab fa-instagram"></i></a></li>-->
+<!--            <li><a href="javascript:"><i class="fab fa-pinterest"></i></a></li>-->
+<!--            <li><a href="javascript:"><i class="fab fa-youtube"></i></a></li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-section">
+      <div class="email">
+        <div class="email-img">
+          <img src="/assets/images/icons/png/news-letter-sms-icon.png" alt="news letter sms icon.png">
+        </div>
+        <div class="form">
+          <form action="#">
+            <label>Send us your email for our latest shop and special offers</label>
+            <div class="input-email">
+              <input type="email" name="email" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+              <button type="button" (click)="onSubmitEmail()" >submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="we-accept">
+        <div class="footer-title">
+          <h1>we accept</h1>
+        </div>
+        <div class="we-accept-img">
+          <a href="javascript:" class="payment-md"><img src="/assets/images/payments/SSLCommerz-Pay-With-logo-All-Size-05.png" alt="SSLCommerz-Pay-With-logo-All-Size-05.png"></a>
+          <a href="javascript:" class="payment-xs"><img src="/assets/images/payments/SSLCommerz-Pay-With-logo-All-Size-04.png" alt="SSLCommerz-Pay-With-logo-All-Size-04.png"></a>
+          <!-- <a href="javascript:"><img src="/assets/images/payments/bkash-icon.png" alt="bkash icon.png"></a>
+          <a href="javascript:"><img src="/assets/images/payments/rocket-icon.png" alt="rocket icon.pn"></a>
+          <a href="javascript:"><img src="/assets/images/payments/mastercard-icon.png" alt="mastercard icon.png"></a>
+          <a href="javascript:"><img src="/assets/images/payments/visa-icon.png" alt="visa icon.png"></a>
+          <a href="javascript:"><img src="/assets/images/payments/amex-icon.png" alt="amex icon.png"></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="ntt">
+  <p>© 2021 {{shopInfo?.siteName}} | All rights reserved.</p>
+</div>

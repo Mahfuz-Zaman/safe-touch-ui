@@ -1,0 +1,110 @@
+<!--[ngClass]="{'toolbar-shadow': scrollPosition > 100}"-->
+
+
+
+<header class="header" (click)="onClickHeader()" [class.toolbar-small]="scrollPosition > 714">
+
+  <div class="container" [ngClass]="{'toolbar-scroll': scrollPosition > 714}">
+
+    <div class="logo">
+      <a (click)="onNavigate()" style="text-decoration: none">
+        <img class="logo" [src]="logoPrimary" alt="Safe Touch">
+      </a>
+    </div> <!-- END LOGO -->
+
+    <div class="search" (click)="onClickSearchArea($event)">
+      <form class="search-form" #searchForm=ngForm>
+        <input #searchInput
+               id="searchInput"
+               class="tw"
+               type="text"
+               placeholder="Search in Safe Touch..."
+               (focus)=handleFocus($event)
+               name="searchTerm"
+               autocomplete="off"
+               ngModel
+               required>
+        <div class="icon">
+          <mat-icon>search</mat-icon>
+        </div>
+        <div *ngIf="isLoading" class="sk-fading-circle">
+          <div class="sk-circle1 sk-circle"></div>
+          <div class="sk-circle2 sk-circle"></div>
+          <div class="sk-circle3 sk-circle"></div>
+          <div class="sk-circle4 sk-circle"></div>
+          <div class="sk-circle5 sk-circle"></div>
+          <div class="sk-circle6 sk-circle"></div>
+          <div class="sk-circle7 sk-circle"></div>
+          <div class="sk-circle8 sk-circle"></div>
+          <div class="sk-circle9 sk-circle"></div>
+          <div class="sk-circle10 sk-circle"></div>
+          <div class="sk-circle11 sk-circle"></div>
+          <div class="sk-circle12 sk-circle"></div>
+        </div>
+      </form>
+
+<!-- Suggestion View -->
+      <ul id="auto-suggestion" class="auto-complete-box"
+          [ngClass]="searchProducts.length > 0 && isOpen ? 'active' : ''">
+        <li class="list-view" *ngFor="let data of searchProducts" (click)="onSelectItem(data)">
+          <img class="img-thumb" [src]="data?.images && data?.images.length > 0? data.images[0] : '/assets/images/placeholder/test.png'" [alt]="data?.productName">
+          <div class="desc">
+            <h3 class="bn-default">{{data.productName}}</h3>
+          </div>
+          <div class="price"><span class="discount">({{data | price: 'discountPrice'}}৳ OFF)</span> {{data | price: 'priceWithDiscount'}}TK</div>
+        </li>
+      </ul>
+    </div> <!-- END SEARCH -->
+
+    <div class="action">
+      <div class="icon-text contact" fxHide.lt-md="true">
+        <div class="icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="wrap">
+          <p>Contact</p>
+          <h3>{{shopInfo && shopInfo?.phones && shopInfo?.phones?.length > 0 ? shopInfo?.phones[0]?.value : 'N/A'}}</h3>
+        </div>
+      </div>
+
+      <div class="icon-text delivery">
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="wrap">
+          <p>Email</p>
+          <h3>{{shopInfo && shopInfo?.emails && shopInfo?.emails?.length > 0 ? shopInfo?.emails[0]?.value : 'N/A'}}</h3>
+        </div>
+      </div>
+
+<!--      <div class="icon-text locator" fxHide.xs="true">-->
+<!--        <div class="icon" routerLink="/store-locator" style="cursor: pointer">-->
+<!--          <i class="fas fa-map-marked-alt"></i>-->
+<!--        </div>-->
+<!--        <div class="wrap">-->
+<!--          <h3 class="color" routerLink="/store-locator" style="cursor: pointer">Store Locator</h3>-->
+<!--          <div class="social">-->
+<!--            <a href="#">-->
+<!--              <i class="fab fa-facebook"></i>-->
+<!--            </a>-->
+<!--            <a href="#">-->
+<!--              <i class="fab fa-instagram"></i>-->
+<!--            </a>-->
+<!--            <a href="#">-->
+<!--              <i class="fab fa-twitter"></i>-->
+<!--            </a>-->
+<!--            <a href="#">-->
+<!--              <i class="fab fa-youtube"></i>-->
+<!--            </a>-->
+<!--            <a href="#">-->
+<!--              <i class="fab fa-linkedin-in"></i>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+    </div> <!-- END ACTION -->
+  </div>
+
+
+</header>

@@ -1,0 +1,15 @@
+@import "src/theme/section-header-one";
+
+.section-view {
+  min-height: 75vh;
+}
+
+.content-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
+}
+
+.gap {
+  padding: 16px;
+}

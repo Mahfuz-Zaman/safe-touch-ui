@@ -1,0 +1,187 @@
+[
+  {
+    "_id": "1",
+    "name": "Himsagor Mango",
+    "slug": "himsagor-mango",
+    "category": "23",
+    "categorySlug": "mango",
+    "categoryName": "Mango",
+    "images": [
+      {
+        "big": "/assets/images/product/05.jpg",
+        "medium": "/assets/images/product/05.jpg",
+        "small": "/assets/images/product/05.jpg"
+      },
+      {
+        "big": "/assets/images/product/02.jpg",
+        "medium": "/assets/images/product/02.jpg",
+        "small": "/assets/images/product/02.jpg"
+      },
+      {
+        "big": "/assets/images/product/03.jpg",
+        "medium": "/assets/images/product/03.jpg",
+        "small": "/assets/images/product/03.jpg"
+      },
+      {
+        "big": "/assets/images/product/04.jpg",
+        "medium": "/assets/images/product/04.jpg",
+        "small": "/assets/images/product/04.jpg"
+      }
+    ],
+    "subCategory": "10",
+    "subCatName": "Himsagor",
+    "subCatSlug": "himsagor",
+    "availableQuantity": 100,
+    "quantityType": "KG",
+    "price": 200,
+    "discount": 10,
+    "desc": "স্বাদে ও গন্ধে অতুলনীয় এই ক্ষিরসাপাত। আমটির আকৃতি মাঝারি, গোলাকার দেখতে। আমটির গড় ওজন ২৬৩.৯ গ্রাম। আমটির বোটা মোটা এবং শক্ত। গা মসৃণ, পাকার পর নিন্মাংশ সবুজ থেকে যায়। বোটার আশেপাশে হলুদ রাং ধারণ করে। আশবিহীন এই আমটির শাসের রং হলুদ। আমটির খোসা সামান্য মোটা। খোসা ছাড়ালে এমনিতেই শাস আটি থেকে বেড়িয়ে আসে। ফলটি সুগন্ধযুক্ত ও রসালো, বেশ মিষ্টি। গড় মিষ্টতা ১৮.৪ %। এর আহারোপযোগী অংশ শতকরা ৬৭.২ । বাংলাদেশের সর্বপ্রথম আমের উপরে ইকমার্স ওয়েব সাইটে আপনাকে স্বাগতম । ক্যালসিয়াম কার্বাইড ও ফরমালিন মুক্ত রাজশাহীর আম খাবার প্রতিশ্রুতি নিয়ে হাজির হয়েছি ।",
+    "videoLink": "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/wf3WqjSBqXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+  },
+  {
+    "_id": "2",
+    "name": "Aam Rupali Mango",
+    "slug": "aam-rupali-mango",
+    "category": "23",
+    "categorySlug": "mango",
+    "categoryName": "Mango",
+    "images": [
+      {
+        "big": "/assets/images/product/01.jpg",
+        "medium": "/assets/images/product/01.jpg",
+        "small": "/assets/images/product/01.jpg"
+      },
+      {
+        "big": "/assets/images/product/03.jpg",
+        "medium": "/assets/images/product/03.jpg",
+        "small": "/assets/images/product/03.jpg"
+      },
+      {
+        "big": "/assets/images/product/04.jpg",
+        "medium": "/assets/images/product/04.jpg",
+        "small": "/assets/images/product/04.jpg"
+      }
+    ],
+    "subCategory": "10",
+    "subCatName": "Aam Rupali",
+    "subCatSlug": "aam-rupali",
+    "availableQuantity": 100,
+    "quantityType": "KG",
+    "price": 200,
+    "discount": 10,
+    "desc": "স্বাদে ও গন্ধে অতুলনীয় এই ক্ষিরসাপাত। আমটির আকৃতি মাঝারি, গোলাকার দেখতে। আমটির গড় ওজন ২৬৩.৯ গ্রাম। আমটির বোটা মোটা এবং শক্ত। গা মসৃণ, পাকার পর নিন্মাংশ সবুজ থেকে যায়। বোটার আশেপাশে হলুদ রাং ধারণ করে। আশবিহীন এই আমটির শাসের রং হলুদ। আমটির খোসা সামান্য মোটা। খোসা ছাড়ালে এমনিতেই শাস আটি থেকে বেড়িয়ে আসে। ফলটি সুগন্ধযুক্ত ও রসালো, বেশ মিষ্টি। গড় মিষ্টতা ১৮.৪ %। এর আহারোপযোগী অংশ শতকরা ৬৭.২ । বাংলাদেশের সর্বপ্রথম আমের উপরে ইকমার্স ওয়েব সাইটে আপনাকে স্বাগতম । ক্যালসিয়াম কার্বাইড ও ফরমালিন মুক্ত রাজশাহীর আম খাবার প্রতিশ্রুতি নিয়ে হাজির হয়েছি ।",
+    "videoLink": "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/wf3WqjSBqXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+  },
+  {
+    "_id": "3",
+    "name": "Mollika Mango",
+    "slug": "mollika-mango",
+    "category": "23",
+    "categorySlug": "mango",
+    "categoryName": "Mango",
+    "images": [
+      {
+        "big": "/assets/images/product/02.jpg",
+        "medium": "/assets/images/product/02.jpg",
+        "small": "/assets/images/product/02.jpg"
+      },
+      {
+        "big": "/assets/images/product/03.jpg",
+        "medium": "/assets/images/product/03.jpg",
+        "small": "/assets/images/product/03.jpg"
+      },
+      {
+        "big": "/assets/images/product/04.jpg",
+        "medium": "/assets/images/product/04.jpg",
+        "small": "/assets/images/product/04.jpg"
+      }
+    ],
+    "subCategory": "10",
+    "subCatName": "mollika",
+    "subCatSlug": "Mollika",
+    "availableQuantity": 100,
+    "quantityType": "KG",
+    "price": 200,
+    "discount": 10,
+    "desc": "স্বাদে ও গন্ধে অতুলনীয় এই ক্ষিরসাপাত। আমটির আকৃতি মাঝারি, গোলাকার দেখতে। আমটির গড় ওজন ২৬৩.৯ গ্রাম। আমটির বোটা মোটা এবং শক্ত। গা মসৃণ, পাকার পর নিন্মাংশ সবুজ থেকে যায়। বোটার আশেপাশে হলুদ রাং ধারণ করে। আশবিহীন এই আমটির শাসের রং হলুদ। আমটির খোসা সামান্য মোটা। খোসা ছাড়ালে এমনিতেই শাস আটি থেকে বেড়িয়ে আসে। ফলটি সুগন্ধযুক্ত ও রসালো, বেশ মিষ্টি। গড় মিষ্টতা ১৮.৪ %। এর আহারোপযোগী অংশ শতকরা ৬৭.২ । বাংলাদেশের সর্বপ্রথম আমের উপরে ইকমার্স ওয়েব সাইটে আপনাকে স্বাগতম । ক্যালসিয়াম কার্বাইড ও ফরমালিন মুক্ত রাজশাহীর আম খাবার প্রতিশ্রুতি নিয়ে হাজির হয়েছি ।",
+    "videoLink": "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/wf3WqjSBqXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+  },
+  {
+    "_id": "4",
+    "name": "Khirsapat Mango",
+    "slug": "khirsapat-mango",
+    "category": "23",
+    "categorySlug": "mango",
+    "categoryName": "Mango",
+    "images": [
+      {
+        "big": "/assets/images/product/03.jpg",
+        "medium": "/assets/images/product/03.jpg",
+        "small": "/assets/images/product/03.jpg"
+      },
+      {
+        "big": "/assets/images/product/01.jpg",
+        "medium": "/assets/images/product/01.jpg",
+        "small": "/assets/images/product/01.jpg"
+      },
+      {
+        "big": "/assets/images/product/02.jpg",
+        "medium": "/assets/images/product/02.jpg",
+        "small": "/assets/images/product/02.jpg"
+      },
+      {
+        "big": "/assets/images/product/04.jpg",
+        "medium": "/assets/images/product/04.jpg",
+        "small": "/assets/images/product/04.jpg"
+      }
+    ],
+    "subCategory": "10",
+    "subCatName": "Khirsapat",
+    "subCatSlug": "khirsapat",
+    "availableQuantity": 100,
+    "quantityType": "KG",
+    "price": 200,
+    "discount": 10,
+    "desc": "স্বাদে ও গন্ধে অতুলনীয় এই ক্ষিরসাপাত। আমটির আকৃতি মাঝারি, গোলাকার দেখতে। আমটির গড় ওজন ২৬৩.৯ গ্রাম। আমটির বোটা মোটা এবং শক্ত। গা মসৃণ, পাকার পর নিন্মাংশ সবুজ থেকে যায়। বোটার আশেপাশে হলুদ রাং ধারণ করে। আশবিহীন এই আমটির শাসের রং হলুদ। আমটির খোসা সামান্য মোটা। খোসা ছাড়ালে এমনিতেই শাস আটি থেকে বেড়িয়ে আসে। ফলটি সুগন্ধযুক্ত ও রসালো, বেশ মিষ্টি। গড় মিষ্টতা ১৮.৪ %। এর আহারোপযোগী অংশ শতকরা ৬৭.২ । বাংলাদেশের সর্বপ্রথম আমের উপরে ইকমার্স ওয়েব সাইটে আপনাকে স্বাগতম । ক্যালসিয়াম কার্বাইড ও ফরমালিন মুক্ত রাজশাহীর আম খাবার প্রতিশ্রুতি নিয়ে হাজির হয়েছি ।",
+    "videoLink": "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/wf3WqjSBqXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+  },
+  {
+    "_id": "5",
+    "name": "Gopal Vog Mango",
+    "slug": "gopal-vog-mango",
+    "category": "23",
+    "categorySlug": "mango",
+    "categoryName": "Mango",
+    "images": [
+      {
+        "big": "/assets/images/product/04.jpg",
+        "medium": "/assets/images/product/04.jpg",
+        "small": "/assets/images/product/04.jpg"
+      },
+      {
+        "big": "/assets/images/product/01.jpg",
+        "medium": "/assets/images/product/01.jpg",
+        "small": "/assets/images/product/01.jpg"
+      },
+      {
+        "big": "/assets/images/product/02.jpg",
+        "medium": "/assets/images/product/02.jpg",
+        "small": "/assets/images/product/02.jpg"
+      },
+      {
+        "big": "/assets/images/product/03.jpg",
+        "medium": "/assets/images/product/03.jpg",
+        "small": "/assets/images/product/03.jpg"
+      }
+    ],
+    "subCategory": "10",
+    "subCatName": "Gopal Vog",
+    "subCatSlug": "gopal-vog",
+    "availableQuantity": 100,
+    "quantityType": "KG",
+    "price": 200,
+    "discount": 10,
+    "desc": "স্বাদে ও গন্ধে অতুলনীয় এই ক্ষিরসাপাত। আমটির আকৃতি মাঝারি, গোলাকার দেখতে। আমটির গড় ওজন ২৬৩.৯ গ্রাম। আমটির বোটা মোটা এবং শক্ত। গা মসৃণ, পাকার পর নিন্মাংশ সবুজ থেকে যায়। বোটার আশেপাশে হলুদ রাং ধারণ করে। আশবিহীন এই আমটির শাসের রং হলুদ। আমটির খোসা সামান্য মোটা। খোসা ছাড়ালে এমনিতেই শাস আটি থেকে বেড়িয়ে আসে। ফলটি সুগন্ধযুক্ত ও রসালো, বেশ মিষ্টি। গড় মিষ্টতা ১৮.৪ %। এর আহারোপযোগী অংশ শতকরা ৬৭.২ । বাংলাদেশের সর্বপ্রথম আমের উপরে ইকমার্স ওয়েব সাইটে আপনাকে স্বাগতম । ক্যালসিয়াম কার্বাইড ও ফরমালিন মুক্ত রাজশাহীর আম খাবার প্রতিশ্রুতি নিয়ে হাজির হয়েছি ।",
+    "videoLink": "<iframe width=\"1280\" height=\"720\" src=\"https://www.youtube.com/embed/wf3WqjSBqXM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+  }
+]

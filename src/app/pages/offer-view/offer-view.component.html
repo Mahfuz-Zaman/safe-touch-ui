@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+  <section class="section-2 section-deal-of-day section-md">
+    <div class="container">
+
+      <div class="deal-title">
+        <h2>Deal Of the Day</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="deal-of-the-day-view">
+        <app-deal-of-day-card
+          class="deal-of-the-card"
+          *ngFor="let data of allDealsOfTheDay"
+          [data]="data">
+        </app-deal-of-day-card>
+      </div>
+
+    </div>
+  </section><!--Deal Of the Day end-->
+
+  <section class="section-2 section-deal-of-day section-md">
+    <div class="container">
+
+      <div class="deal-title">
+        <h2>Deal on Play</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="deal-on-play-view">
+        <app-product-card-one
+          *ngFor="let data of dealOnPlayProducts"
+          [product]="data"></app-product-card-one>
+      </div>
+
+    </div>
+  </section><!--Deal On Play end-->
+
+</div>

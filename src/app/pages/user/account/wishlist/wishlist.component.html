@@ -1,0 +1,46 @@
+<div class="header">
+    <h2>Order List</h2>
+  </div>
+
+  <hr class="center-square">
+
+
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr class="table-head">
+        <th scope="col">{{'Image'}}</th>
+        <th scope="col">{{'Name'}}</th>
+        <th scope="col">{{'Short Description'}}</th>
+        <th scope="col">{{'Price'}}</th>
+        <th scope="col">{{'Actions'}}</th>
+      </tr>
+      </thead> <!-- End Table Head -->
+      <tr *ngFor="let data of wishlistProducts">
+        <td [attr.data-label]="'Image'"><img src="{{data?.images[0]}}" alt=""></td>
+        <td [attr.data-label]="'Name'">{{data?.productName}}</td>
+        <td [attr.data-label]="'Short Description'" [innerHTML]="data?.shortDescription | safeHtmlCustom"></td>
+        <td [attr.data-label]="'Price'">৳ {{data?.price}}</td>
+        <td [attr.data-label]="'Actions'">
+  <!--        <button style="margin-right: 5px;" mat-mini-fab color="primary"-->
+  <!--                [routerLink]="['/shop/purchase-report', 'company._id']">-->
+  <!--          <mat-icon>update</mat-icon>-->
+  <!--        </button>-->
+                <button style="margin-right: 5px;" mat-mini-fab color="warn" (click)="openConfirmDialog(data?._id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+                <button mat-mini-fab color="primary" [routerLink]="['/product-details', data.productSlug]">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+  <!--        <button [routerLink]="['/shop/company-edit-info', 'company._id']" mat-mini-fab-->
+  <!--                aria-label="Example icon-button with a heart icon">-->
+  <!--          <mat-icon>edit</mat-icon>-->
+  <!--        </button>-->
+        </td>
+      </tr><!-- End Table Body -->
+
+    </table>
+
+
+  </div>

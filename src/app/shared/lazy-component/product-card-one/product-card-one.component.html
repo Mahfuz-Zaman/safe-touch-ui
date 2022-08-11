@@ -1,0 +1,46 @@
+<!---******** card-area ********-->
+<div class="card" [routerLink]="['/product-details', product?.productSlug]">
+  <!---******** card-img-area ********-->
+  <div class="card-img">
+    <img
+      [defaultImage]="'/assets/images/placeholder/test.png'" [lazyLoad]="product.images[0]"
+         [alt]="">
+    <!---******** card-hover-img-area ********-->
+    <div class="card-hover-img" *ngIf="product?.images && product?.images.length > 1">
+      <img
+        [defaultImage]="'/assets/images/placeholder/test.png'" [lazyLoad]="product.images[1]"
+           [alt]="">
+    </div>
+  </div> <!---******** card-img-end ********-->
+  <!---******** card-body-area ********-->
+  <div class="card-body">
+    <h3 *ngIf="product?.vendor == null || !product?.vendor"><img class="img-thumb" style="height: 25px; width: 25px;" [src]="'/assets/images/icons/extra/rajarhat-mall.ico'" [alt]="Rajarhat"></h3>
+    <!---******** card-title ********-->
+    <div class="card-title">
+      <a [routerLink]="['/product-details', product?.productSlug]">{{product?.productName | slice:0:20}}...</a>
+    </div>
+    <!---******** card-rating ********-->
+    <app-product-rating-view [ratingValue]="product?.rating"></app-product-rating-view>
+    <!-- <div class="card-rating">
+      <ul>
+        <li><i class="fa fa-star fill"></i></li>
+        <li><i class="fa fa-star fill"></i></li>
+        <li><i class="fa fa-star fill"></i></li>
+        <li><i class="fa fa-star fill"></i></li>
+        <li><i class="fa fa-star fill"></i></li>
+        <li><i class="fa fa-star outline"></i></li>
+      </ul>
+    </div> -->
+    <!---******** price ********-->
+    <div class="card-price">
+      <h3 class="price">
+        <del *ngIf="product?.discountAmount">৳{{product?.price | number : '': 'bn'}}</del>
+        ৳{{(product | price: 'priceWithDiscount') | number : '': 'bn'}}
+      </h3>
+    </div>
+    <!---******** card-btn ********-->
+    <div class="card-btn">
+      <a (click)="addToCart($event)" type="button">ADD TO CART</a>
+    </div>
+  </div> <!---******** card-bdoy-end ********-->
+</div> <!---******** card-area-end ********-->

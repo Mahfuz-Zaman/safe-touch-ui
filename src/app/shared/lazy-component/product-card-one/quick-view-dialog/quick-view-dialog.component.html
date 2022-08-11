@@ -1,0 +1,159 @@
+
+<section class="product-details">
+  <div class="container">
+
+    <button mat-icon-button class="btn-close" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <!--******* details-main-area *****-->
+    <div class="product-details-main">
+      <!--**** product-img ***-->
+      <div class="product-img">
+        <!--Main Img-->
+        <div class="product-img1">
+          <img src="/assets/images/junk/Sharp-Washing-Machine-ES-W80EW-H-3.png" alt="t shirt.png" (mousemove)="onMouseMove($event)"
+               (mouseleave)="onMouseLeave($event)">
+          <div class="product-discount">
+            <span>-10%</span>
+          </div>
+        </div>
+        <!--- slide-img -->
+        <div class="product-img-slide">
+
+          <owl-carousel-o class="small-carousel" [options]="carouselCtrService.smallImgCarouselConfig">
+            <ng-container>
+              <ng-template carouselSlide>
+                <div class="slide-img" (click)="selectImage('/assets/images/junk/Sharp-Washing-Machine-ES-W80EW-H-2.jpg')">
+                  <img src="/assets/images/junk/Sharp-Washing-Machine-ES-W80EW-H-2.jpg" alt="t shirt.png">
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="slide-img">
+                  <img src="/assets/images/junk/Sharp-Washing-Machine-ES-W80EW-H.png" alt="t shirt.png">
+                </div>
+              </ng-template>
+              <ng-template carouselSlide>
+                <div class="slide-img">
+                  <img src="/assets/images/junk/Sharp-Washing-Machine-ES-W80EW-H-3.png" alt="t shirt.png">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="slide-img">
+                  <img src="/assets/images/junk/W100DS_OPEN_LID-01.png" alt="t shirt.png">
+                </div>
+              </ng-template>
+
+              <ng-template carouselSlide>
+                <div class="slide-img">
+                  <img src="/assets/images/junk/Sharp-Wahing-Machine-ES-W110DS-S1.jpg" alt="t shirt.png">
+                </div>
+              </ng-template>
+
+            </ng-container>
+          </owl-carousel-o>
+
+        </div>
+      </div>
+
+      <!----***** product-info ****-->
+
+      <div class="product-info">
+
+        <div style="z-index: 9;" #zoomViewer>
+          <div *ngIf="zoomImage" class="zoom-viewer mat-elevation-z18"
+               [ngStyle]="{'background-image': 'url(' + zoomImage + ')'}"></div>
+        </div> <!-- END IMAGE ZOOM VIEW -->
+
+        <!--- product-title -->
+        <div class="product-title">
+          <h2>LEWEL Girl's Cotton
+            Color block Hooded
+            T-Shirt</h2>
+        </div>
+
+        <!--- Product-serial-no -->
+        <div class="product-no">
+          <h3>SKU: <span>C5689</span></h3>
+        </div>
+
+        <!-- Product-categori -->
+        <div class="product-categori">
+          <h3>Categories: <a href="#" target="_blank">Clothing</a></h3>
+        </div>
+
+        <!-- Product-tag -->
+
+        <div class="product-tag">
+          <h3>Tag: <a href="#" target="_blanks">Cold</a><span>,</span>
+            <a href="#" target="_blanks">hoody</a><span>,</span>
+            <a href="#" target="_blank">T-shirt</a>
+          </h3>
+        </div>
+
+        <!-- Product-price -->
+        <div class="product-price">
+          <h3>
+            <del>£340.00</del>
+            £275.00
+          </h3>
+        </div>
+
+        <!-- Product-description -->
+        <div class="product-discription">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            commodo consequat.</p>
+        </div>
+
+        <!-- Product-aad-and- item value-area  -->
+        <div class="product-btn">
+          <div class="item-btn">
+            <div id="mines">
+              <button>-</button>
+            </div>
+            <div id="value">
+              <input type="text" value="1">
+            </div>
+            <div id="plus">
+              <button>+</button>
+            </div>
+          </div>
+          <div class="add-btn">
+            <a href="#" target="_blank">ADD TO CART</a>
+          </div>
+        </div>
+
+        <!-- Product-add-wishlist-area -->
+
+        <div class="add-wishlist">
+          <ul>
+            <li><a href="#"> <span> <i class="fa fa-heart"></i></span> Add To Wishlist</a></li>
+            <li><a href="#"><span><i class="fa fa-chart-area"></i></span> Compare</a></li>
+          </ul>
+        </div>
+
+        <!---product-policy-area -->
+        <div class="product-policy-area">
+          <div class="policy-menu">
+            <ul>
+              <li><a href="javascript:">Delivery Policies</a></li>
+              <li><a href="javascript:">Payment Policies</a></li>
+              <li><a href="javascript:">Warranty Policies</a></li>
+            </ul>
+          </div>
+          <div class="dv-details">
+            <p>We can deliver anywhere in Bangladesh within maximum of 7 days and 1 day
+              delivery is possible within Dhaka area. You will get all the products at your
+              doorstep without any hassle at all. </p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,63 @@
+<div class="deal-product-details">
+
+  <!---deal-product-img **-->
+  <div class="deal-product-img">
+    <span class="sale">Sale</span>
+    <img [src]="data?.product?.images && data?.product.images.length >0 ? data?.product.images[0] : '/assets/images/placeholder/test.png'"
+         [alt]="data?.product?.productName">
+  </div>
+  <!-- deal-product-text-details -->
+  <div class="deal-product-text-details">
+    <!-- deal-product-link -->
+    <div class="deal-product-link">
+      <a [routerLink]="['/product-details', data?.product?.productSlug]">{{data?.product?.productName}}</a>
+    </div>
+    <!-- deal-product-rating -->
+    <div class="deal-rating">
+      <ul id="star-menu">
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+      </ul>
+    </div>
+    <!-- deal-product-price -->
+    <div class="deal-product-price">
+      <h3> <span>৳</span> {{data?.product?.price}}.00 <del> <small>£</small> {{data?.product?.price}}.00</del></h3>
+    </div>
+    <!-- deal-product-description -->
+    <div class="deal-product-description">
+      <p>{{data?.product?.shortDescription}}</p>
+    </div>
+    <!-- deal-product-clock -->
+    <div class="clock">
+      <div class="time">
+        <h3>281 </h3>
+        <span>Days</span>
+      </div>
+      <div class="time">
+        <h3>04</h3>
+        <span>Hours</span>
+      </div>
+      <div class="time">
+        <h3>57</h3>
+        <span>Minutes</span>
+      </div>
+      <div class="time border-none">
+        <h3>57</h3>
+        <span>Secs</span>
+      </div>
+    </div>
+    <!--icon-menu-->
+    <div class="deal-icon-menu">
+      <ul>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a href="#"><i class="fa fa-eye"></i></a></li>
+        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+        <li><a href="#"><i class="fa fa-clone"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>

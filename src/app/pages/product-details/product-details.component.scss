@@ -1,0 +1,137 @@
+@import "src/theme/product-details";
+@import "src/theme/product-details-bottom";
+@import "src/theme/deal-of-the-day";
+
+.product-details{
+  width: 100%;
+  max-width: $theme-container-width;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #d5d5d5;
+}
+
+.add-review-area {
+  padding-bottom: 12px;
+}
+
+
+
+//.img-carousel {
+//  width: 100%;
+//  height: 100%;
+//  border: 1px solid #dbdbdb;
+//  padding: 8px;
+//  img {
+//    width: 100%;
+//    height: 100%;
+//    object-fit: contain;
+//  }
+//}
+
+.zoom-viewer {
+  width: 100%;
+  background: #FFFFFF;
+
+  img {
+    width: 100%;
+    max-width: 610px;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.section-recommended {
+  padding: 0 16px;
+  .wrap-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px 20px;
+    grid-template-rows: auto;
+    padding-top: 20px;
+  }
+}
+
+
+/**
+Image Carousel Small
+ */
+::ng-deep.small-carousel .owl-theme .owl-nav .disabled {
+  opacity: 0;
+  cursor: default;
+}
+
+::ng-deep.small-carousel .owl-carousel .owl-item {
+  width: auto;
+  padding: 16px 5px;
+}
+
+::ng-deep.small-carousel .owl-carousel .owl-nav .owl-prev {
+  position: absolute;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #9e9e9e;
+  padding: 0;
+  font-size: 16px;
+  i {
+    color: #9e9e9e;
+  }
+}
+
+::ng-deep.small-carousel .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #9e9e9e;
+  padding: 0;
+  font-size: 16px;
+  i {
+    color: #9e9e9e;
+  }
+
+}
+
+::ng-deep.small-carousel  .owl-carousel .owl-nav .owl-next:hover,
+::ng-deep.small-carousel  .owl-carousel .owl-nav .owl-prev:hover{
+  border-color: #FFD200;
+}
+::ng-deep.small-carousel  .owl-carousel .owl-nav .owl-next:hover i,
+::ng-deep.small-carousel  .owl-carousel .owl-nav .owl-prev:hover i{
+  color: #FFD200;
+}
+
+
+/****** SECTION RECOMMENDED ******/
+@media(max-width: 991px) {
+  .section-recommended {
+    .wrap-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media(max-width: 550px) {
+  .section-recommended {
+    .wrap-content {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

@@ -1,0 +1,157 @@
+<section class="show-case clearfix">
+
+   <nav class="hover-menu" appOutSideClick >
+    <ul class="main-menu">
+      <li *ngFor="let menu of categoryMenus" [routerLink]="'/product-list/' + menu.slug">
+        <a class="d-flex" [routerLink]="'/product-list/' + menu.slug">
+          <img class="cat-icon" [src]="menu.icon" alt="">
+          <span>{{menu.name}}</span>
+        </a>
+        <mat-icon>arrow_right</mat-icon>
+
+        <!-- <ul class="sub-menu" *ngIf="menu.hasChild.length > 0">
+          <li *ngFor="let subMenu of menu.hasChild" [routerLink]="'/product-list/' + menu.slug + '/' + subMenu.slug">
+            <a [routerLink]="'/product-list/' + menu.slug + '/' + subMenu.slug">{{subMenu.name}}</a>
+            <mat-icon>arrow_right</mat-icon>
+            <ul class="super-sub-menu" *ngIf="subMenu.hasChild.length > 0">
+              <li *ngFor="let superSubMenu of subMenu.hasChild" [routerLink]="'/product-list/'  + menu.slug + '/' + subMenu.slug + '/' + superSubMenu.slug ">
+                <a [routerLink]="'/product-list/'  + menu.slug + '/' + subMenu.slug + '/' + superSubMenu.slug ">{{superSubMenu.name}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul> -->
+
+         <!---hover-menu-->
+         <div class="sub-mega-menu" *ngIf="menu.hasChild.length > 0">
+          <app-menu-hover-content [data]="menu.hasChild" [parentCategory]="menu"></app-menu-hover-content>
+        </div> <!---hover-menu-end-->
+
+
+      </li>
+      <li>
+        <a class="d-flex" [routerLink]="'/all-product-list'">
+          <img class="cat-icon" [src]="'/assets/images/icons/extra/more.svg'" alt="">
+        </a>
+        <span (click)="seeMore()"  class="seeMore">{{'See More'}}</span>
+        <mat-icon>arrow_right</mat-icon>
+      </li>
+    </ul>
+  </nav> <!---END CATEGORY HOVER MENU PC-->
+  <div class="carousel-group clearfix">
+    <div class="top-view clearfix">
+      <div class="big-carousel-view">
+        <owl-carousel-o class="offer-carousel" [options]="carouselCtrService.bigCarouselConfig">
+          <ng-container *ngFor="let f of carousels">
+            <ng-template carouselSlide>
+              <div class="carousel-img-big">
+                <a [routerLink]="f.url" style="width: 100%;">
+                  <img [defaultImage]="'/assets/images/placeholder/anim.gif'" [lazyLoad]="f?.image" alt="">
+                </a>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <!-- <div class="login-offer">
+        <div class="user-access" *ngIf="!isUserAuth">
+          <div class="user-access-top">
+            <span><i class="fa fa-user"></i></span>
+            <h3>Welcome To Safe Touch</h3>
+            <ul>
+              <li><a routerLink="/registration">Registration </a></li>
+              <li><a routerLink="/login">Login</a></li>
+            </ul>
+          </div>
+        </div>
+        <app-user-small-profile *ngIf="isUserAuth" [user]="user" ></app-user-small-profile>
+      </div> LOGIN OFFER END -->
+    </div>
+
+    <!-- <div class="bottom-view">
+      <div class="container-with-carousel">
+        <owl-carousel-o
+          [options]="carouselCtrService.dealOnPlay"
+          class="carousel-deal-on-play">
+          <ng-container *ngFor="let data of dealOnPlay">
+            <ng-template carouselSlide>
+              <div class="img-thumb">
+                <a [routerLink]="['/deal-on-play', data._id]">
+                  <img [defaultImage]="'/assets/images/placeholder/anim.gif'" [lazyLoad]="data?.image" alt="" >
+                </a>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+    </div>END Deal of The Day Product Carousel -->
+
+  </div> <!-- END Carousel Data -->
+</section> <!-- END Showcase Area -->
+
+<section class="big-offer-banner" *ngIf="banner">
+  <a [routerLink]="['/offer-products', banner?._id]">
+    <img [src]="banner?.image ? banner.image : '/assets/images/placeholder/test.png'" [alt]="banner?.name">
+  </a>
+</section> <!-- END BIG OFFER VIEW -->
+
+<section class="section-view">
+  <div class="container">
+    <!--section-2-title-->
+    <div class="section-title col-sm">
+      <div class="title view-row">
+        <h1>Flash Sale</h1>
+      </div>
+
+      <div class="counter-time">
+        <div class="counter">
+          <app-time-counter-one *ngIf="allFlashSale && allFlashSale.length > 0" [endDate]="allFlashSale[0]?.endDate" ></app-time-counter-one>
+        </div>
+      </div>
+     <!-- <div class="see-more">
+       <a routerLink="/product-list/smartphones">See more <span><i class="fa fa-angle-right"></i></span></a>
+     </div> -->
+    </div>
+
+    <div class="container-carousel-group">
+      <owl-carousel-o
+        [options]="carouselCtrService.productCardView"
+        class="carousel-product-view">
+        <ng-container *ngFor="let product of allFlashSale[0]?.products">
+          <ng-template carouselSlide>
+            <app-product-card-one [product]="product"></app-product-card-one>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+    </div><!--END Deal of The Day Product Carousel-->
+  </div>
+</section> <!-- END FLASH SALE -->
+
+
+<section class="section-view" *ngFor="let feature of featuredCategory">
+  <div class="container">
+    <!--section-2-title-->
+    <div class="section-title col-sm">
+      <div class="title">
+        <h1>{{feature?.name}}</h1>
+      </div>
+
+<!--      <div class="see-more">-->
+<!--        <a routerLink="/product-list/smartphones">See more <span><i class="fa fa-angle-right"></i></span></a>-->
+<!--      </div>-->
+    </div>
+
+    <div class="container-carousel-group">
+      <owl-carousel-o
+        [options]="carouselCtrService.productCardView"
+        class="carousel-product-view">
+        <ng-container *ngFor="let data of feature.products">
+          <ng-template carouselSlide>
+            <app-product-card-one [product]="data"></app-product-card-one>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+    </div><!--END Deal of The Day Product Carousel-->
+  </div>
+</section> <!-- END Featured Products -->

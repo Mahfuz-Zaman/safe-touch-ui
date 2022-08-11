@@ -1,0 +1,31 @@
+
+<section class="section-view">
+  <div class="container">
+    <div class="section-title">
+      <div class="title">
+        <h1>Online Shops</h1>
+      </div>
+    </div>
+
+    <div class="content-view">
+      <ng-container *ngFor="let data of onlineVendorList| paginate:
+        { itemsPerPage: productsPerPage, currentPage: currentPage, totalItems: totalProducts }">
+        <app-shop-card-one [data]="data"></app-shop-card-one>
+      </ng-container>
+
+    </div>
+
+  </div>
+
+</section> <!-- END OTHERS BRAND VIEW -->
+
+
+<!--<div *ngIf="onlineVendorList.length > 0" fxLayout="row wrap" style="margin-top: 15px;">-->
+<!--  <div fxFlex="100" class="p-1">-->
+<!--    <mat-card class="p-0 text-center">-->
+<!--      <pagination-controls class="product-pagination" autoHide="true" maxSize="20"-->
+<!--                           (pageChange)="onChangePage($event)"></pagination-controls>-->
+<!--    </mat-card>-->
+<!--  </div>-->
+<!--</div>-->
+

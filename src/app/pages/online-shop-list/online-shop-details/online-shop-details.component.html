@@ -1,0 +1,177 @@
+<!--terms-menu-->
+<section class="terms-menu">
+  <div class="container">
+    <!--** menu ***-->
+    <!-- <div class="">
+      <ul>
+        <li><a href="#">Home <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>
+        <li><a href="#">Shops <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>
+        <li><a href="#" class="menu-active">Orajon Test Shop Hajipara</a></li>
+      </ul>
+    </div> -->
+  </div>
+</section>
+<!--terms-section1-->
+<section class="section-1">
+  <div class="container">
+    <!---section1-main-->
+    <div class="section1-main">
+      <div class="section1-img">
+        <img [src]="vendor?.shopLogo ? vendor?.shopLogo : '/assets/images/placeholder/test.png'" alt="">
+      </div>
+      <div class="section1-details">
+        <h3>{{vendor?.shopName}} | {{vendor?.shopZone}}, {{vendor?.shopArea}}</h3>
+        <p>Contact: {{vendor?.phoneNo}}</p>
+        <!--rating-area-->
+        <div class="rating-area">
+          <ul>
+            <li>
+              <!--rating-->
+              <div class="rating-five-star">
+                <ul>
+                  <li><span><i class="fa fa-star"></i></span></li>
+                  <li><span><i class="fa fa-star"></i></span></li>
+                  <li><span><i class="fa fa-star"></i></span></li>
+                  <li><span><i class="fa fa-star"></i></span></li>
+                  <li><span><i class="fa fa-star"></i></span></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p>5</p>
+            </li>
+<!--            <li>-->
+<!--              <a href="#" class="follow"><span><i class="fa fa-bell"></i></span>follow</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#" class="chat"><span><i class="fa fa-comment"></i></span>Chat</a>-->
+<!--            </li>-->
+          </ul>
+        </div> <!--rating-area-end-->
+        <p>{{vendor?.shortDescription}}</p>
+      </div>
+    </div>
+  </div>
+</section>    <!--terms-section1-->
+
+<!--collapase-area-->
+<section class="section-2">
+  <div class="container">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="section2-title">
+              <h2><span>*</span> Terms & Conditions</h2>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="tin-code">
+          <p>{{vendor?.termsAndConditions}}</p>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+</section><!--section2-area-->
+
+
+
+
+<!---****** section-3 *******-->
+<section class="section-3">
+  <div class="container">
+    <!---****** section-3-main *******-->
+    <div class="section3-main">
+      <!--side-menu-->
+<!--      <div class="side-menu-area" [class]="isOpen?'show':'hide'">-->
+<!--        <ul>-->
+<!--          <li><p>All Products</p></li>-->
+<!--          <li class="clearfix"><a href="#">pen <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Knif <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">kitchen Accessories<span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Turmeric Powder <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Salt<span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Other Spices-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Psyllium Husk-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Cardamom-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Ghee-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Vinegar & Cooking Wine-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Other Fruit-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Grocery-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Olive Oil-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Honey-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--          <li class="clearfix"><a href="#">Hand Washes and Sanitizers-->
+<!--            <span><img src="/assets/images/junk/right-arrow.svg" alt=""></span></a></li>-->
+<!--        </ul>-->
+<!--        <div class="load-more">-->
+<!--          <a href="#">load more</a>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash;side-menu-end&ndash;&gt;-->
+
+      <!--- card-area -->
+      <div class="card-area">
+
+        <!---card-area top--->
+        <div class="card-area-top">
+          <!--search-->
+<!--          <div class="search">-->
+<!--            <form action="#">-->
+<!--              <div class="input">-->
+<!--                <input type="text" placeholder="Search..." value="" name="productSearch" >-->
+<!--              </div>-->
+<!--              <div class="search-btn">-->
+<!--                <button><i class="fa fa-search"></i></button>-->
+<!--              </div>-->
+<!--            </form>-->
+<!--          </div> &lt;!&ndash;search-end&ndash;&gt;-->
+          <!--filter-->
+<!--          <div class="filter">-->
+<!--            <span [matMenuTriggerFor]="menu"><i class="fa fa-filter"></i></span>-->
+<!--          </div>-->
+<!--          <mat-menu #menu="matMenu">-->
+<!--            <div class="filter-link">-->
+<!--              <a href="#">Latest</a>-->
+<!--              <a href="#">Price: Low to High</a>-->
+<!--              <a href="#">Price:  High to Low</a>-->
+<!--            </div>-->
+<!--          </mat-menu>-->
+<!--          &lt;!&ndash;filter-end&ndash;&gt;-->
+
+          <div class="side-menu-bar" (click)="toggle()">
+            <span><i class="fa fa-bars"></i></span>
+          </div>
+        </div><!---card-area top--->
+
+
+        <!---card-area-main-->
+        <div class="card-area-main"  *ngIf="products.length > 0">
+
+          <!--*** card *****-->
+          <app-product-card-two style="width: 100%;" [data]="data" *ngFor='let data of products'></app-product-card-two>
+          <!-- <app-product-card-two [data]="data" *ngFor='let data of allFeaturedCategory[1].products'></app-product-card-two> -->
+          <!--*** card-end *****-->
+
+
+
+        </div><!---card-area-main-end-->
+
+
+      </div>   <!--- card-area-end -->
+
+
+
+    </div> <!---****** section-3-main-end *******-->
+  </div>
+</section>   <!---****** section-3-end *******-->

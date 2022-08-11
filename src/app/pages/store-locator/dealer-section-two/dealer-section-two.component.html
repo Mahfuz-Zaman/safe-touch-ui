@@ -1,0 +1,52 @@
+<!--************ section-2 ***********-->
+<section class="section-2">
+  <div class="container">
+
+    <!--****** search-map-area *******-->
+    <!-- <div class="search-map-area">
+      <form action="">
+        <ul>
+          <li><span>Search location</span></li>
+          <li id="input"><input type="text" name="searchBox" placeholder=""></li>
+          <li><button type="button">Search</button></li>
+        </ul>
+      </form>
+    </div> -->
+
+    <!---***** section2-main-area ******-->
+    <section class="section2-main">
+      <div class="section2-details">
+
+        <div class="section2-details-main">
+          <ul>
+
+            <li *ngFor="let store of stores">
+              <h2>{{store?.storeName}}</h2>
+              <span>{{store?.address}}</span>
+              <span>{{store?.phoneNumber}}</span>
+              <span>{{store?.district}}</span>
+              <span>{{store?.country}}</span>
+
+              <!--**** distance **-->
+              <!-- <div class="distance">
+                <span>4.5 km</span>
+                <a href="#">Directions</a>
+              </div> -->
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+      <!--******* section-2-map *****-->
+      <!-- <div class="section2-map">
+        <div class="map-main">
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2119418.774701241!2d70.3002801531748!3d29.25641458982471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1622384668774!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div> -->
+    </section>
+
+
+  </div>
+</section>

@@ -1,0 +1,45 @@
+@import "src/theme/exports/table-one";
+
+/*----------------
+TOP ACTION
+------------------*/
+.top-action {
+  margin-top: 16px;
+  padding-right: 16px;
+
+  display: flex;
+  justify-content: space-between;
+
+  .select-area {
+    padding-left: 16px;
+    .mat-radio-button ~ .mat-radio-button {
+      margin-left: 16px;
+    }
+  }
+
+
+  button {
+    ::ng-deep {
+      span {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+/*----------------
+HEADER TITLE
+------------------*/
+.header {
+  h2 {
+    text-align: center;
+    font-family: $font-en-primary;
+  }
+}
+
+
+.table-image {
+  width: 140px;
+  height: 100px;
+  object-fit: scale-down;
+}

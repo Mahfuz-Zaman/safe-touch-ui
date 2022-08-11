@@ -1,0 +1,8 @@
+@import "src/theme/variables";
+
+.container {
+  width: 100%;
+  max-width: $theme-container-max-width;
+  padding: 0 16px;
+  margin: 0 auto;
+}

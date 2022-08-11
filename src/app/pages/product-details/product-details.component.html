@@ -1,0 +1,486 @@
+<section class="product-details-menu-area">
+  <div class="container">
+    <div class="product-menu">
+      <ul>
+        <li><a routerLink="/" >Home <span><i class="fa fa-angle-double-right"></i></span></a></li>
+        <li><a href="javascript:"> {{product?.productName}}</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!---***** Products-Details *********-->
+
+<section class="product-details">
+  <div class="container">
+
+    <!--******* details-main-area *****-->
+    <div class="product-details-main">
+      <!--**** product-img ***-->
+      <div class="product-img">
+        <!--Main Img-->
+        <div class="product-img1">
+          <img [defaultImage]="'/assets/images/placeholder/anim.gif'"
+               [lazyLoad]="image"
+               [alt]="product?.productName"
+               (mousemove)="onMouseMove($event)"
+               (mouseleave)="onMouseLeave($event)">
+          <div class="product-discount">
+            <span>{{ ( ( ( (product?.price) - (product? (product | price: 'priceWithDiscount') : 0) ) / (product?.price) ) * 100 ) | number:'1.1-2' }}%</span>
+          </div>
+        </div>
+        <!--- slide-img -->
+        <div class="product-img-slide">
+
+          <owl-carousel-o class="small-carousel" [options]="carouselCtrService.smallImgCarouselConfig">
+            <ng-container *ngFor="let slider of product?.images; let i = index;">
+              <ng-template carouselSlide>
+                <div class="slide-img" (click)="selectImage(slider)">
+                  <img [defaultImage]="'/assets/images/placeholder/anim.gif'"
+                       [lazyLoad]="slider"
+                       [alt]="">
+                </div>
+              </ng-template>
+
+            </ng-container>
+          </owl-carousel-o>
+
+        </div>
+      </div>
+
+      <!----***** product-info ****-->
+
+      <div class="product-info">
+
+        <div style="z-index: 9;" #zoomViewer>
+          <div *ngIf="zoomImage" class="zoom-viewer mat-elevation-z18"
+               [ngStyle]="{'background-image': 'url(' + zoomImage + ')'}"></div>
+        </div> <!-- END IMAGE ZOOM VIEW -->
+
+        <!--- product-title -->
+        <div class="product-title">
+          <h2>{{product?.productName}}</h2>
+        </div>
+
+        <!--- Product-serial-no -->
+        <div class="product-no">
+          <h3>SKU: <span>{{product?.sku}}</span></h3>
+        </div>
+
+        <!-- Product-categori -->
+        <div class="product-categori">
+          <h3>Categories: <a [routerLink]="['/product-list', product?.categorySlug]">
+           <p>{{product?.category?.categoryName}}</p>
+          </a>
+          </h3>
+        </div>
+
+        <!-- Product-tag -->
+
+        <div class="product-tag">
+          <h3>Tag:
+            <a href="javascript:" *ngFor="let t of product?.tags">{{t?.tagName}}</a><span>,</span>
+          </h3>
+        </div>
+
+        <div class="product-categori" *ngIf="product?.vendor">
+          <h3>Sold By: <a [routerLink]="['/online-shop', 'details',  product?.vendor?.vendorSlug]">
+           <p>{{product?.vendor?.shopName}}</p>
+          </a>
+          </h3>
+        </div>
+
+        <div class="product-categori" *ngIf="!product?.vendor">
+          <h3>Sold By: <a [routerLink]="['/product-list/rajarhat/r']">
+           <p>Safe Touch</p>
+          </a>
+          </h3>
+        </div>
+
+        <!-- Product-price -->
+        <div class="product-price">
+          <h3>
+            <del *ngIf="product?.discountAmount">৳{{product?.price | number : '': 'bn'}}</del>
+            ৳{{(product | price: 'priceWithDiscount') | number : '': 'bn'}}
+          </h3>
+        </div>
+
+        <!-- Product-description -->
+        <div class="product-discription" [innerHTML]="product?.shortDescription | safeHtmlCustom"></div>
+
+        <h3 *ngIf="product?.vendor == null || !product?.vendor"><img class="img-thumb" style="height: 50px; width: 50px;" [src]="'/assets/images/icons/extra/rajarhat-mall.ico'" [alt]="Rajarhat"></h3>
+
+        <!-- Product-aad-and- item value-area  -->
+        <div class="product-btn">
+          <div class="item-btn">
+            <div id="mines" (click)="decrementQty()">
+              <button>-</button>
+            </div>
+            <div id="value">
+              <input type="text" [value]="selectedQty">
+            </div>
+            <div id="plus" (click)="incrementQty()">
+              <button>+</button>
+            </div>
+          </div>
+          <div class="add-btn" *ngIf="!existsInCart">
+            <a (click)="addToCart()">ADD TO CART</a>
+          </div>
+          <div class="add-btn" *ngIf="existsInCart">
+            <a routerLink="/cart" style="background: #ffd200; color: #000">GO TO CART</a>
+          </div>
+          <!-- <div class="add-btn" *ngIf="!existsInWishlist && existsInCart">
+            <a (click)="addToWishlist(product?._id)">ADD TO WISHLIST</a>
+          </div>
+          <div class="add-btn" *ngIf="existsInWishlist">
+            <a routerLink="/" style="background: #ffd200; color: #000">GO TO WISHLIST</a>
+          </div> -->
+        </div>
+
+        <!-- Product-add-wishlist-area -->
+
+        <div class="add-wishlist">
+          <ul>
+            <li><a href="javascript:" *ngIf="!existsInWishlist && !existsInCart && isUserAuth" (click)="addToWishlist(product?._id)"> <span> <i class="fa fa-heart"></i></span> Add To Wishlist</a></li>
+          </ul>
+          <ul>
+            <li><a routerLink="/account/wishlist" *ngIf="existsInWishlist && isUserAuth"> <span> <i class="fa fa-heart"></i></span> Go To Wishlist</a></li>
+          </ul>
+        </div>
+
+        <!-- Product-social-link -->
+
+        <div class="social-link">
+          <ul>
+            <li class="change-width1"><a href="javascript:"><img src="/assets/images/junk/linkedin.svg" alt=""
+                                                                       class="change-width"></a></li>
+            <li class="change-width1"><a href="javascript:"><img src="/assets/images/junk/instagram.svg" alt=""
+                                                                       class="change-width"></a></li>
+            <li class="change-width1"><a href="javascript:"><img src="/assets/images/junk/facebook.svg" alt=""
+                                                                       class="change-width"></a></li>
+          </ul>
+        </div>
+
+        <!---product-policy-area -->
+        <div class="product-policy-area">
+          <div class="policy-menu">
+            <ul>
+              <li><a (click)="viewPolicy = 'delivery'" [ngClass]="{'active' : viewPolicy === 'delivery'}">Delivery Policies</a></li>
+              <li><a (click)="viewPolicy = 'payment'" [ngClass]="{'active' : viewPolicy === 'payment'}">Payment Policies</a></li>
+              <li><a (click)="viewPolicy = 'warranty'" [ngClass]="{'active' : viewPolicy === 'warranty'}">Warranty Policies</a></li>
+            </ul>
+          </div>
+          <div class="dv-details" [ngSwitch]="viewPolicy">
+            <!-- <p *ngSwitchCase="'delivery'">{{product?.deliveryPolicy ? product.deliveryPolicy : 'N/A'}}</p> -->
+            <p *ngSwitchCase="'delivery'" [innerHTML]="product?.deliveryPolicy ? product.deliveryPolicy : 'N/A' | safeHtmlCustom" ></p>
+            <p *ngSwitchCase="'payment'" [innerHTML]="product?.paymentPolicy ? product.paymentPolicy : 'N/A' | safeHtmlCustom" ></p>
+            <p *ngSwitchCase="'warranty'" [innerHTML]="product?.deliveryPolicy ? product.warrantyPolicy : 'N/A'  | safeHtmlCustom" ></p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="product-review-area">
+  <div class="container">
+
+    <div class="product-review-main-area">
+      <!---**** review-menu ***-->
+      <div class="product-review-menu">
+        <ul>
+          <li><a class="no-select" (click)="viewContainer = 'desc'" [ngClass]="{'active' : viewContainer === 'desc'}">Description </a></li>
+          <li><a class="no-select" (click)="viewContainer = 'specification'" [ngClass]="{'active' : viewContainer === 'specification'}">Specifications</a></li>
+          <li><a class="no-select" (click)="viewContainer = 'warranty'" [ngClass]="{'active' : viewContainer === 'warranty'}">Services</a></li>
+          <li><a class="no-select" (click)="viewContainer = 'review'" [ngClass]="{'active' : viewContainer === 'review'}">Reviews ({{allReviews.length}})</a></li>
+<!--          <li><a class="no-select" (click)="viewContainer = 'discussions'" [ngClass]="{'active' : viewContainer === 'discussions'}">Discussions(30)</a></li>-->
+        </ul>
+      </div> <!-- END NAV BAR -->
+
+      <ng-container [ngSwitch]="viewContainer">
+        <ng-container *ngSwitchCase="'desc'">
+          <div class="description" [innerHTML]="product?.description | safeHtmlCustom"></div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'specification'">
+          <div class="specification">
+            <div class="table">
+              <table>
+                <tr *ngFor="let d of product?.filterData">
+                  <th>{{d?.attributeName}}</th>
+                  <td><p>{{d?.attributeValues}}</p></td>
+                </tr>
+              </table>
+            </div>
+          </div><!-- END Specifications -->
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'warranty'">
+          <div class="description" [innerHTML]="product?.warrantyServices | safeHtmlCustom"></div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'review'">
+          <div class="review-area">
+
+            <div class="add-review-area">
+              <app-rating-and-review [productId]="product?._id"></app-rating-and-review>
+              <div class="line"></div>
+            </div>
+
+            <!--** review-title **-->
+<!--            <div class="reviews-title">-->
+<!--              <h2>LEWEL Girl's Cotton Color block Hooded T-Shirt</h2>-->
+<!--            </div>-->
+
+            <!--******************* user-and-Esquare-review-area-start **********-->
+
+            <div class="user-and-Esquare-review-area" *ngFor="let data of allReviews">
+              <!--******* user-review-main *******-->
+              <div class="user-review">
+
+                <!--** user-img ***-->
+                <div class="user-img">
+                  <img [src]="data.user?.profileImg ? data.user?.profileImg : '/assets/images/avatar/user_low.png'" [alt]="data.user?.fullName">
+                </div>
+
+                <!--*** user-comment **-->
+                <div class="user-comment clearfix">
+                  <div style="margin-bottom: 10px;" class="clearfix">
+                    <div class="user-name">
+                      <h3 class="Name">{{data.user?.fullName}} <span>– {{data.reviewDate | date :'fullDate'}}</span></h3>
+                    </div>
+
+                    <div class="user-rating">
+                      <app-product-rating-view [ratingValue]="data?.rating"></app-product-rating-view>
+                      <!-- <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul> -->
+                    </div>
+                  </div><!--*** user-comment-end**-->
+                  <div class="comment">
+                    <p>{{data?.review}}</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!--ans-area-->
+              <div class="e-square-ans" *ngIf="data.reply">
+                <!--*** user-review ***-->
+                <div class="user-review">
+
+                  <!--** user-img ***-->
+                  <div class="user-img">
+                    <img src="/assets/images/junk/e-logo.png" alt="e-logo.png">
+                  </div>
+
+                  <!--*** user-comment **-->
+                  <div class="user-comment clearfix">
+                    <div style="margin-bottom: 10px;">
+                      <div class="user-name e-square-title">
+                        <h3 class="Name">Safe Touch LTD <span>– {{data?.reviewDate | date: 'fullDate'}}</span></h3>
+                      </div>
+                    </div><!--*** user-comment-end**-->
+                    <div class="comment">
+                      <p>{{data.reply}}</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div> <!--******************* user-and-Esquare-review-area-end  *********-->
+
+
+          </div><!---END Review-->
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'discussions'">
+          <div class="discussion">
+            <div class="discussion-details">
+              <!--**** discussion-title *******-->
+              <div class="discussion-title">
+                <h2>Got something to discuss?</h2>
+              </div>
+              <!--********** discussion-form-area *********-->
+              <div class="discussion-form">
+                <form action="#">
+                  <div class="form-top">
+                    <div class="discussion-user-img">
+                      <img src="/assets/images/junk/7b6af8aa348e1f11c9c039d924ec1db9.png" alt="7b6af8aa348e1f11c9c039d924ec1db9.png">
+                    </div>
+                    <div class="discussion-user-comment">
+                      <textarea name="comment" cols="20" rows="3" placeholder="Join the discussion"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-bottom">
+
+                    <div class="form-left">
+                      <div>
+                        <input type="text" placeholder="Name" name="userName">
+                      </div>
+                      <div class="code-conform">
+                        <div class="code-input">
+                          <input type="text" name="code" id="code">
+                        </div>
+                        <div class="code-img">
+                          <ul>
+                            <li><img src="/assets/images/junk/captcha.png" alt=""></li>
+                            <li id="refresh"><img src="/assets/images/junk/refresh-16x16.png" alt=""></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <label for="code">Please insert the code above to comment</label>
+                    </div>
+                    <div class="form-right">
+                      <div class="discussion-user-email">
+                        <input type="email" placeholder="Email" name="userEmail" value="">
+                      </div>
+                      <div class="agree">
+                        <input type="checkbox" name="agree" id="check">
+                        <label for="check">Notify of new replies to this comment</label>
+                      </div>
+                      <div class="submit">
+                        <button type="submit">post comment</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>  <!--********** discussion-form-area-end *********-->
+
+              <!--** Guest and support-area ***-->
+              <div class="guest-and-support-area">
+
+                <!--******** guest *******-->
+                <div class="guest">
+                  <div class="commenter-details">
+                    <!--commenter-img-->
+                    <div class="commenter-img">
+                      <img src="/assets/images/junk/7b6af8aa348e1f11c9c039d924ec1db9.png" alt="7b6af8aa348e1f11c9c039d924ec1db9.png">
+                      <span>Guest</span>
+                    </div>
+
+                    <!--commenter-comment-details-->
+                    <div class="commenter-comment clearfix">
+
+                      <div class="commenter-name-date clearfix">
+                        <div class="commenter-name">
+                          <h3>Itkkan</h3>
+                          <p>Need to know about the external size of this fridge. LENGTH, WIDTH AND HEIGHT?</p>
+                        </div>
+                        <div class="comment-date">
+                          <span>15 days 6 hours ago</span>
+                        </div>
+                      </div>
+                      <div class="replay-share">
+                        <ul>
+                          <li><span>0</span></li>
+                          <li>∧</li>
+                          <li>|</li>
+                          <li>∨</li>
+                          <li>Replay</li>
+                          <li>-</li>
+                          <li>Share</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Replay-form-->
+                  <form action="#" class="replay-form">
+                    <div class="form-top">
+                      <div class="discussion-user-img">
+                        <img src="/assets/images/junk/7b6af8aa348e1f11c9c039d924ec1db9.png" alt="7b6af8aa348e1f11c9c039d924ec1db9.png">
+                      </div>
+                      <div class="discussion-user-comment">
+                        <textarea name="comment" cols="20" rows="2" placeholder="Join the discussion"></textarea>
+                      </div>
+                    </div>
+                  </form>
+
+                </div><!---******* guest-end **********-->
+
+
+                <!--******** support *******-->
+                <div class="support">
+                  <div class="commenter-details">
+                    <!--commenter-img-->
+                    <div class="commenter-img">
+                      <img src="/assets/images/junk/7b6af8aa348e1f11c9c039d924ec1db9.png" alt="/assets/images/icons/user/user.svg">
+                      <span>Guest</span>
+                    </div>
+
+                    <!--commenter-comment-details-->
+                    <div class="commenter-comment clearfix">
+
+                      <div class="commenter-name-date clearfix">
+                        <div class="commenter-name">
+                          <h3>Safe Touch</h3>
+                          <p>DIMENSION (W X H X D) MM= 645 x 1,672 x 685</p>
+                        </div>
+                        <div class="comment-date">
+                          <span>13 days 11 hours ago</span>
+                        </div>
+                      </div>
+                      <div class="replay-share">
+                        <ul>
+                          <li><span>0</span></li>
+                          <li>∧</li>
+                          <li>|</li>
+                          <li>∨</li>
+                          <li>Replay</li>
+                          <li>-</li>
+                          <li>Share</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Replay-form-->
+                  <form action="#" class="replay-form">
+                    <div class="form-top">
+                      <div class="discussion-user-img">
+                        <img src="/assets/images/junk/e-logo.png" alt="e-logo.png">
+                      </div>
+                      <div class="discussion-user-comment">
+                        <textarea name="comment" cols="20" rows="2" placeholder="Join the discussion"></textarea>
+                      </div>
+                    </div>
+                  </form>
+
+                </div><!---******* support-end **********-->
+              </div>
+            </div>
+          </div><!----END Discussion-->
+        </ng-container>
+      </ng-container>
+
+
+    </div>
+  </div>
+</section><!----END PRODUCT BOTTOM-->
+
+
+<section class="section-2 section-recommended section-md">
+  <div class="container">
+
+    <div class="deal-title">
+      <h2>Related Products</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="wrap-content">
+      <app-product-card-one *ngFor="let data of relatedProducts | slice:0:4" [product]="data"></app-product-card-one>
+    </div>
+
+
+  </div>
+</section><!--END RECOMMENDED SECTION VIEW-->

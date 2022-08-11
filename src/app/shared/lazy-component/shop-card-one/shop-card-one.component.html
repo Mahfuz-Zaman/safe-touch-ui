@@ -1,0 +1,37 @@
+<div class="shop-product" [ngClass]="isLocalShop ? 'local' : 'online'" [routerLink]="['/online-shop', 'details',  data?.vendorSlug]">
+
+  <div class="circle-img">
+    <img [src]="data?.imgLogo" alt="">
+  </div>
+  <div class="shop-content">
+    <a href="#">{{data?.shopName}}</a>
+    <h5>Proprietor: {{data?.vendorName}}</h5>
+    <!-- <h3 [fxHide]="!data?.approved">Verified by: Orajon</h3> -->
+    <h2>{{1}} Products </h2>
+    <ul [fxHide]="!data?.approved">
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+    </ul>
+  </div>
+  <!--  <div class="shop-product-img">-->
+  <!--    <div>-->
+  <!--      <img src="/assets/images/junk/120e5211da5ad347ae0fe5379980ff04.jpg" alt="#">-->
+  <!--    </div>-->
+  <!--    <div [fxHide.xs]="true">-->
+  <!--      <img src="/assets/images/junk/b31b5f9ba5248ce67f4c834a2ec72aa8.jpg" alt="#">-->
+  <!--    </div>-->
+  <!--    <div [fxHide.xs]="true">-->
+  <!--      <img src="/assets/images/junk/f09212b26a81c47b84be1f1e8ef2d12d.jpg" alt="#">-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <div class="location" [fxHide]="!isLocalShop">
+    <span><small><i class="fa fa-map-marker"></i></small>Mirpur,Dhaka</span>
+  </div>
+  <div class="shop-heart" [fxHide]="!isLocalShop">
+    <span><i class="fa fa-heart"></i></span>
+  </div>
+</div>

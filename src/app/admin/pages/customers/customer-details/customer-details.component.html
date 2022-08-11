@@ -1,0 +1,72 @@
+<!--***** admin-pannel-area ******-->
+<section class="admin-panel">
+  <div class="container">
+    <!--**** admin-pannel-main-area *****-->
+    <div class="admin-main">
+
+      <!--***** admin-profile ******-->
+      <div class="admin-profile">
+
+        <!--***** admin-profile-mdile ******-->
+        <div class="admin-profile-top">
+          <div class="profile-img">
+            <img [src]="customer.profileImg" [alt]="'Picked Image'">
+          </div>
+        </div>
+
+      </div> <!--***** admin-profile-end ******-->
+
+
+      <!--****** admin-form-area **********-->
+      <div class="admin-form-area">
+        <!--****** admin-form **********-->
+        <form>
+
+          <!--****** admin-personal-information **********-->
+          <div class="form-info">
+            <!--****** admin-field-title **********-->
+            <div class="field-title">
+              <h3>Customer Information:</h3>
+            </div>
+            <!--name-->
+            <div class="name">
+              <mat-form-field appearance="outline">
+                <p>Name           : {{customer.fullName}}</p>
+                <p>BirthDate      : {{customer.birthdate}}</p>
+                <p>Gender         : {{customer.gender}}</p>
+                <p>Address        : {{customer.address}}</p>
+                <p>Phone Verified : {{customer.isPhoneVerified}}</p>
+                <p>Email Verified : {{customer.isEmailVerified}}</p>
+                <p>Has Access     : {{customer.hasAccess}}</p>
+                <p>Created At    : {{customer.createdAt}}</p>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!--****** Contact Information **********-->
+          <div class="form-info">
+            <!--****** admin-field-title **********-->
+            <div class="field-title">
+              <h3>Contact Information:</h3>
+            </div>
+            <!--name-->
+            <div class="num">
+              <mat-form-field appearance="outline">
+                <p>Phone No     : {{customer.phoneNo}}</p>
+                <p>email        : {{customer.birthdate}}</p>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+        </form>
+      </div><!--*** end *****-->
+
+      <div class="progress">
+
+      </div>
+
+
+    </div>
+  </div>
+</section>

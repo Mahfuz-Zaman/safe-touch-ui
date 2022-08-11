@@ -1,0 +1,15 @@
+
+@import "theme/theme";
+@import "theme/fonts";
+@import "theme/base";
+@import "theme/mixins";
+@import "theme/nav";
+
+// Carousel
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+

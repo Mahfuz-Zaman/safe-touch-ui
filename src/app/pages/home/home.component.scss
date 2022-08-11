@@ -1,0 +1,260 @@
+@import "src/theme/variables";
+@import "src/theme/hover-menu";
+@import'../../../theme/hover-menu';
+@import "src/theme/exports/card-offer-login";
+@import "src/theme/exports/big-offer-banner";
+@import "src/theme/section-header-one";
+
+
+.show-case {
+  display: block;
+  width: 100%;
+  max-width: $theme-container-width;
+  margin: 0 auto;
+  height: 516px;
+}
+
+.hover-menu {
+  float: left;
+  height: 100%;
+  width: 280px;
+  background: #ffff;
+  box-shadow: 0 3px 4px 0 #eee;
+}
+.sub-mega-menu{
+  min-height: 516px;
+}
+.hover-menu .main-menu{
+  position: relative;
+}
+.carousel-group {
+  float: left;
+  width: calc(100% - 280px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .top-view {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    .big-carousel-view {
+      width:100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+      img {
+        width: 100%;
+        height: 510px;
+      }
+    }
+
+    // .login-offer {
+    //   float: left;
+    //   width: 285px;
+    //   height: 320px;
+    //   background: #FAFAFA;
+    // }
+
+  }
+
+
+  
+
+  // dorkar
+  // .bottom-view {
+  //   width: 100%;
+  //   //height: 180px;
+
+  //   .img-thumb {
+  //     width: 100%;
+  //     a {
+  //       width: 100%;
+  //     }
+  //     img {
+  //       width: 100%;
+  //       height: 180px;
+  //       object-fit: cover;
+  //     }
+  //   }
+  // }
+
+}
+
+/**
+SHOWCASE
+ */
+
+::ng-deep.big-carousel-view .owl-carousel .owl-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+
+/**
+DEAL ON PLAY .carousel-product-view
+ */
+::ng-deep.carousel-deal-on-play .owl-theme .owl-nav .disabled,
+::ng-deep.carousel-product-view .owl-theme .owl-nav .disabled
+{
+  opacity: 0;
+  cursor: default;
+}
+
+::ng-deep.carousel-deal-on-play .owl-carousel .owl-item {
+  padding: 0 0 0 10px;
+}
+
+::ng-deep.carousel-product-view .owl-carousel .owl-item {
+  padding: 8px;
+}
+
+::ng-deep.carousel-deal-on-play .owl-carousel .owl-nav .owl-prev,
+::ng-deep.carousel-product-view .owl-carousel .owl-nav .owl-prev
+{
+  left: 0;
+}
+::ng-deep.carousel-deal-on-play .owl-carousel .owl-nav .owl-next,
+::ng-deep.carousel-product-view .owl-carousel .owl-nav .owl-next
+{
+  right: 0;
+}
+
+::ng-deep.carousel-deal-on-play .owl-carousel .owl-nav .owl-prev,
+::ng-deep.carousel-product-view .owl-carousel .owl-nav .owl-prev,
+::ng-deep.carousel-deal-on-play .owl-carousel .owl-nav .owl-next,
+::ng-deep.carousel-product-view .owl-carousel .owl-nav .owl-next
+{
+  background: $color-secondary;
+  position: absolute;
+  border-radius: 32px;
+  display: grid;
+  place-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+
+  i {
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 959px) {
+  .hover-menu {
+    display: none;
+  }
+  .carousel-group {
+    float: left;
+    width: 100%;
+  }
+  .show-case{
+    height: 400px;
+  }
+  .big-carousel-view{
+    padding: 0px!important;
+    img{
+      height: 400px!important;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1149px) {
+  .carousel-group {
+    .top-view {
+      .big-carousel-view {
+        width: 100%;
+        overflow: hidden;
+        padding: 0 0 0 10px;
+      }
+      .login-offer {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1150px) and (max-width: 460px) {
+  .carousel-group {
+    .top-view {
+      .big-carousel-view {
+        width: calc(100% - 260px);
+      }
+
+      .login-offer {
+        width: 260px;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 599px) {
+  .show-case {
+    height: 250px!important;
+  }
+  .carousel-group {
+    float: left;
+    width: 100%;
+    .top-view {
+      width: 100%;
+      margin: 0px;
+      .big-carousel-view {
+        width: 100%;
+        padding: 0 10px;
+        img {
+          width: 100%;
+          height: 250px!important;
+          object-position: left center;
+        }
+      }
+    }
+
+    .bottom-view {
+      width: 100%;
+      .container-with-carousel {
+        padding: 0 9px 0 0;
+      }
+
+      .img-thumb {
+        img {
+          height: 140px;
+        }
+      }
+    }
+
+  }
+
+  ::ng-deep.carousel-deal-on-play .owl-carousel .owl-item {
+    padding: 0 0 0 10px;
+  }
+
+
+
+
+}
+@media(max-width:400px){
+  .show-case{
+    height: 200px!important;
+  }
+  .carousel-group{
+    .top-view{
+      .big-carousel-view{
+        img{
+          height: 200px!important;
+          object-position: center;
+        }
+     }
+    }
+  }
+}
+.seeMore {
+  position: absolute;
+}
